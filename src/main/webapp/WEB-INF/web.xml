@@ -1,0 +1,37 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>MainPageView</servlet-name>
+  	<display-name>MainPageView</display-name>
+  	<description>This servlet takes us to the Main Page everytime. </description>
+  	<servlet-class>View.MainPageView</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ContributeView</servlet-name>
+  	<display-name>ContributeView</display-name>
+  	<description>This servlet takes you to the contribute view.</description>
+  	<servlet-class>View.ContributeView</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ImportantTopicsView</servlet-name>
+  	<display-name>ImportantTopicsView</display-name>
+  	<description>Servlet to show the Important Topics View.</description>
+  	<servlet-class>View.ImportantTopicsView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>MainPageView</servlet-name>
+  	<url-pattern>/MainPageView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ContributeView</servlet-name>
+  	<url-pattern>/ContributeView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ImportantTopicsView</servlet-name>
+  	<url-pattern>/ImportantTopicsView</url-pattern>
+  </servlet-mapping>
+</web-app>
