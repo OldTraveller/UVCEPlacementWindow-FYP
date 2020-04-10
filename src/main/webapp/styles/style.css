@@ -1,0 +1,37 @@
+/* Overriding default sidebar spacing */
+
+#mainSpinner {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: calc(50% - 14px);
+    margin: auto;
+    z-index: 10;
+}
+
+td {
+    color: black;
+    font-weight: 500;
+}
+
+.hidden {
+	visibility: hidden;
+	display: none;
+}
+/* for footer */
+
+#unsolvedCon {
+    padding: 30px 20px 50px 50px;
+    background-color: white;
+}
+
+#unsolvedTitle, #commonContestTitle {
+    color: #393939;
+    font-weight: 500;
+    font-size: 20px;
+    margin: -20px;
+}
+
+#submitButton {
+    margin: auto;
+}

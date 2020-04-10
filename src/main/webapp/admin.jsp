@@ -22,7 +22,7 @@
 	if (request.getServletContext().getAttribute("STATUS") != null) {
 		int status = (Integer)request.getServletContext().getAttribute("STATUS"); 
 		if (status == 0) { %>
-			<div class="alert alert-succcess alert-dismissible fade show" role="alert">
+			<div class="alert alert-success alert-dismissible fade show" role="alert">
 						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						    <span aria-hidden="true">&times;</span></button>
 			  <strong>Success!</strong> <%= ApplicationConstants.getStatusMessages().get(status) %>
@@ -39,6 +39,12 @@
 						    <span aria-hidden="true">&times;</span></button>
 			 	 <%= ApplicationConstants.getStatusMessages().get(status) %>
 			</div>
+		<% } else { %>
+			<div class="alert alert-info alert-dismissible fade show" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span></button>
+			<%= ApplicationConstants.getStatusMessages().get(status) %>
+		</div>
 		<% }
 	} request.getServletContext().setAttribute("STATUS", null);
 %>

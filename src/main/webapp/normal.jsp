@@ -30,6 +30,9 @@
    <li class="nav-item">
     <a class="nav-link" data-toggle="pill" href="#menu2">SPAM Queue Visualizer</a>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#menu3">Generate New User</a>
+  </li>
  <% } %>
 </ul>
 </div>
@@ -115,7 +118,15 @@
 <hr>
   </div>
   <div id="menu1" class="container tab-pane">
-    <h3 class="text-center">Codeforces Profile of <span style="color: red"><%= studentData.getStudentName() %></span></h3>
+    <h3 class="text-center">Codeforces Profile of <span style="color: purple"><strong><%= studentData.getStudentName() %></strong></span></h3>
+  	<hr>
+  	<% if (studentData.getStudentCodeforcesHandle().equals("#")) { %>
+  		<h2 class="text-center" style='color: red'><strong>Sorry there is no Codeforces Handle associated with this account!</strong></h2>
+  	<% } else { %>
+  		<h4 class="text-center" style='color: blue'>Codeforces Handle: <strong><%= studentData.getStudentCodeforcesHandle() %></strong></h4>
+  		    	<hr>
+  		    	<jsp:include page="./codeforces_page.jsp" />
+  	<% } %>
   	<hr>
   </div>
 <% if (StudentModel.isAdmin()) { %>

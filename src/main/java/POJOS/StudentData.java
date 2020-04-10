@@ -15,7 +15,16 @@ public class StudentData {
 	String studentPublicKey; 
 	String studentPrivateKey; 
 	String studentEmail;
-	int studentIsValid; 
+	int studentIsValid = 1;
+	String studentCodeforcesHandle = "#"; 
+
+	public String getStudentCodeforcesHandle() {
+		return studentCodeforcesHandle;
+	}
+
+	public void setStudentCodeforcesHandle(String studentCodeforcesHandle) {
+		this.studentCodeforcesHandle = studentCodeforcesHandle;
+	}
 
 	public StudentData() throws NoSuchAlgorithmException {
 		this.studentPrivateKey = ImportantFunctions.getSHAString(String.valueOf(System.nanoTime()));

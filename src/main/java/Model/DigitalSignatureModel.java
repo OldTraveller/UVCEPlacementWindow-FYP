@@ -15,7 +15,7 @@ import POJOS.StudentData;
 
 public class DigitalSignatureModel {
 	
-	static boolean generateNewDigitalSignatureFile(StudentData studentData) throws IOException {
+	public static boolean generateNewDigitalSignatureFile(StudentData studentData) throws IOException {
 		boolean isFileGenerated = true; 
 		FileWriter file = new FileWriter(ApplicationConstants.DIGITAL_SIGNATURE_PATH); 
 		String privateKey = studentData.getStudentPrivateKey(); 

@@ -67,6 +67,7 @@ public class PostModel {
 	 * @throws Exception
 	 */
 	public static boolean editPostRecord(Post post) throws Exception {
+		System.out.println("editPostRecord");
 		boolean isUpdated = false; 
 		/* Connection Establishment */
 		Connection connection = DatabaseConnection.getLocalConnection(); 

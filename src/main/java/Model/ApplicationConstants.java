@@ -12,7 +12,8 @@ public class ApplicationConstants {
 		List<String> list = Arrays.asList(
 				"Your post might be reflecting now!", 
 				"Your post is put in review Queue! Hope to push it soon.", 
-				"A valid Digital Signature Device (DSD) might not be present! Make sure your signature device is properly plugged in"
+				"A valid Digital Signature Device (DSD) might not be present! Make sure your signature device is properly plugged in",
+				"The user registration is successfull!!"
 		);
 		ArrayList<String> messages = new ArrayList<String>(list); 
 		return messages; 
