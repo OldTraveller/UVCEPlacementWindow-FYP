@@ -22,6 +22,54 @@
   	<description>Servlet to show the Important Topics View.</description>
   	<servlet-class>View.ImportantTopicsView</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>InsertPostServlet</servlet-name>
+  	<display-name>InsertPostServlet</display-name>
+  	<description>This servlet will cater the POST request sent from the Contribution Tab. </description>
+  	<servlet-class>Controller.InsertPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Contributors</servlet-name>
+  	<display-name>Contributors</display-name>
+  	<description>This servlet goes to the contributor.jsp page. </description>
+  	<servlet-class>View.Contributors</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ContributorsView</servlet-name>
+  	<display-name>ContributorsView</display-name>
+  	<description></description>
+  	<servlet-class>View.ContributorsView</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AdminView</servlet-name>
+  	<display-name>AdminView</display-name>
+  	<description></description>
+  	<servlet-class>View.AdminView</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserWindow</servlet-name>
+  	<display-name>UserWindow</display-name>
+  	<description></description>
+  	<servlet-class>View.UserWindow</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EditPostServlet</servlet-name>
+  	<display-name>EditPostServlet</display-name>
+  	<description></description>
+  	<servlet-class>Controller.EditPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ViewEditPostServlet</servlet-name>
+  	<display-name>ViewEditPostServlet</display-name>
+  	<description></description>
+  	<servlet-class>View.ViewEditPostServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>TogglePostSpamStatusServlet</servlet-name>
+  	<display-name>TogglePostSpamStatusServlet</display-name>
+  	<description></description>
+  	<servlet-class>Controller.TogglePostSpamStatusServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>MainPageView</servlet-name>
   	<url-pattern>/MainPageView</url-pattern>
@@ -33,5 +81,37 @@
   <servlet-mapping>
   	<servlet-name>ImportantTopicsView</servlet-name>
   	<url-pattern>/ImportantTopicsView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InsertPostServlet</servlet-name>
+  	<url-pattern>/InsertPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Contributors</servlet-name>
+  	<url-pattern>/Contributors</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ContributorsView</servlet-name>
+  	<url-pattern>/ContributorsView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdminView</servlet-name>
+  	<url-pattern>/AdminView</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserWindow</servlet-name>
+  	<url-pattern>/UserWindow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditPostServlet</servlet-name>
+  	<url-pattern>/EditPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewEditPostServlet</servlet-name>
+  	<url-pattern>/ViewEditPostServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TogglePostSpamStatusServlet</servlet-name>
+  	<url-pattern>/TogglePostSpamStatusServlet</url-pattern>
   </servlet-mapping>
 </web-app>

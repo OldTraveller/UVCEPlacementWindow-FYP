@@ -8,19 +8,12 @@
           <a class="nav-link active bg-black" href="MainPageView">Main-Window</a>
           <a class="nav-link bg-black" href="ImportantTopicsView">Important-Topics</a>
           <a class="nav-link bg-black" href="ContributeView">Contribute</a>
-          <a class="nav-link bg-black" href="GenerateKeysView">Generate-Keys</a>
-          <a class="nav-link bg-black" href="PublicKeysView">Public-Keys</a>
+          <a class="nav-link bg-black" href="ContributorsView">Public-Keys</a>
         </nav>
       </div>
 
       <div class="col-12 col-md-8 col-lg-8 text-md-left mt-5 mt-md-0">
-        <h2><strong>Some Good Line about the project should come here.</strong></h2>
-        <p>
-        	<strong> Compared to Other Clubs ??? </strong>
-        </p>
-        <p>
-        	Here also ...
-        </p>
+        <h2 style="color: greenyellow"><strong>Fulfillment towards the FINAL YEAR Project for the year 2020-21</strong></h2>
       </div>
     </div>
 

@@ -1,3 +1,4 @@
+<%@page import="Model.ApplicationConstants"%>
 <%@ include file = "/partials/header.jsp" %>	
 <%@page import="Model.DatabaseConnection"%>
 <%@page import="java.sql.DriverManager"%>
@@ -11,9 +12,9 @@
             <div class="hero-body" >
                 <div class="container" align="center">
                     <h1 ><strong>
-                        <span style="color: #003366;">Contribute just by the DIGITAL SIGNATURE</span>
+                        <span style="color: BLACK;">Contribute just by the DIGITAL SIGNATURE</span>
                     </strong></h1>
-                    <h3 class="subtitle"> <span style="color: #003366;">
+                    <h3 class="subtitle"> <span style="color: BLACK;">
                     	No Login and Registration required as in the typical web applications!
                     	</span>
                     </h3>
@@ -25,11 +26,35 @@
     <section class="container w3-animate-zoom" align="center">
   			<h2><strong>POST Information Here</strong></h2>
   			<hr>
+<%
+	if (request.getServletContext().getAttribute("STATUS") != null) {
+		int status = (Integer)request.getServletContext().getAttribute("STATUS"); 
+		if (status == 0) { %>
+			<div class="alert alert-succcess alert-dismissible fade show" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span></button>
+			  <strong>Success!</strong> <%= ApplicationConstants.getStatusMessages().get(status) %>
+			</div>
+		<% } else if (status == 1) {  %>
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span></button>
+			  <strong>Warning!</strong> <%= ApplicationConstants.getStatusMessages().get(status) %>
+			</div>
+		<% } else if (status == 2) { %>
+			<div class="alert alert-primary alert-dismissible fade show" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span></button>
+			 	 <%= ApplicationConstants.getStatusMessages().get(status) %>
+			</div>
+		<% }
+	} request.getServletContext().setAttribute("STATUS", null);
+%>
 	  		<section class="container" align="center">
 	    		<div class="row">
 	    			<div class="col-md-3"></div>
 	    			<div class="col-md-6">
-	    			<form action="AddTopic" method="POST">
+	    			<form action="InsertPostServlet" method="POST">
 						  <div class="form-group">
 						  	<h3>TOPIC NAME</h3>
 						    <input type="text" class="form-control" name="TOPIC_NAME" placeholder="TOPIC NAME" required> 
@@ -56,11 +81,7 @@
 						  	<h3>DESCRIPTION</h3>
     						<textarea class="form-control" rows="8" name="DESCRIPTION" required></textarea>
 						  </div>
-						  <div class="form-group">
-							  <label for="myfile">SELECT DIGITAL SIGNATURE</label>
-							  <input type="file" id="myfile" name="myfile">
-						  </div>
-						  <button type="submit" class="btn btn-primary">Submit</button>
+						  <button type="submit" class="btn btn-dark">POST with Digital Signature</button>
 						</form>
 	    			</div>
 	    			<div class="col-md-3"></div>
@@ -99,14 +120,13 @@
 		resultSet = statement.executeQuery(sql);
 		int i = 0; 
 		out.println("<hr>");
-		System.out.println("SIZE IS : " + resultSet.getFetchSize());
 		out.println("<table class='table table-bordered table-hover'>" + 
 				"<thead>" + 
 				"<tr>" + 
-				"<th style='background-color: #003366; color: white'>POST ID</th>" + 
-				"<th style='color : white; background-color: #003366;'>POST NAME</th>" + 
-				"<th style='color : white; background-color: #003366;'>CONTRIBUTED BY</th>" + 
-				"<th style='color : white; background-color: #003366;'>STATUS</th>" + 
+				"<th style='background-color: BLACK; color: white'>POST ID</th>" + 
+				"<th style='color : white; background-color: BLACK;'>POST NAME</th>" + 
+				"<th style='color : white; background-color: BLACK;'>CONTRIBUTED BY</th>" + 
+				"<th style='color : white; background-color: BLACK;'>STATUS</th>" + 
 				"</tr>" + 
 				"</thead><tbody>");
 		while(resultSet.next()){

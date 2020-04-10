@@ -1,9 +1,34 @@
 <jsp:include page="./partials/header.jsp" />
+<%@page import="Model.ApplicationConstants"%>
 	<!-- WHY US ? -->
 	<hr>
 		<section class="fp-active" data-block-type="contents">
 		  <div class="container">
 		    <div class="row align-items-center">
+<%
+	if (request.getServletContext().getAttribute("STATUS") != null) {
+		int status = (Integer)request.getServletContext().getAttribute("STATUS"); 
+		if (status == 0) { %>
+			<div class="alert alert-succcess alert-dismissible fade show" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span></button>
+			  <strong>Success!</strong> <%= ApplicationConstants.getStatusMessages().get(status) %>
+			</div>
+		<% } else if (status == 1) {  %>
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span></button>
+			  <strong>Warning!</strong> <%= ApplicationConstants.getStatusMessages().get(status) %>
+			</div>
+		<% } else if (status == 2) { %>
+			<div class="alert alert-primary alert-dismissible fade show" role="alert">
+						  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						    <span aria-hidden="true">&times;</span></button>
+			 	 <%= ApplicationConstants.getStatusMessages().get(status) %>
+			</div>
+		<% }
+	} request.getServletContext().setAttribute("STATUS", null);
+%>
 		      <div class="col-12 col-md-12 col-lg-6 col-xl-5">
 		        <h2 class="text-center bolder w3-animate-bottom">About UVCE Placement Window ...</h2>
 		        <p class="lead mb-5 w3-animate-top">

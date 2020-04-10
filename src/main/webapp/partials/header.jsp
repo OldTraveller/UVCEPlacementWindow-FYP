@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="./javascripts/helper.js" type="text/javascript"></script>
   <script data-ad-client="ca-pub-8188827845576666" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -39,7 +40,10 @@
             <a class="nav-link" href="ContributeView">Contribute</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="MainPageView">Public-Keys</a>
+            <a class="nav-link" href="ContributorsView">Public-Keys</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="UserWindow">Check Content</a>
           </li>
         </ul>
       </div>

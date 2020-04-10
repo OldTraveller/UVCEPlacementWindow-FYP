@@ -17,4 +17,8 @@ public class ContributeView extends HttpServlet {
 		System.out.println("ContributeView");
 		request.getRequestDispatcher("contribute.jsp").forward(request, response);
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 }

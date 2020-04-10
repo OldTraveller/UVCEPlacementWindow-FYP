@@ -14,7 +14,7 @@ public class SpamDetectionModel {
 	
 	/**
 	 * FUNCTION which sends a POST request to the Python API created in Flask. 
-	 * @param text - The text that needs to be checked for SPAM or not. 
+	 * @param text - The text that needs to be checked for SPAM. 
 	 * @return responseString - Contains the JSON response body of the POST request's response. 
 	 * @throws IOException
 	 */
@@ -28,10 +28,12 @@ public class SpamDetectionModel {
 		con.setRequestProperty("Accept", "application/json");
 		con.setDoOutput(true);
 		String jsonInputString = "{\"text_to_be_classified\" : \"" + text + "\"}";
+		
 		try(OutputStream os = con.getOutputStream()) {
 		    byte[] input = jsonInputString.getBytes("utf-8");
 		    os.write(input, 0, input.length);           
 		}
+		
 		try(BufferedReader br = new BufferedReader(
 			 new InputStreamReader(con.getInputStream(), "utf-8"))) {
 			 StringBuilder response = new StringBuilder();

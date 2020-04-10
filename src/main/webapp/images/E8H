@@ -1,0 +1,13 @@
+#
+#Thu Apr 09 09:34:44 UTC 2020
+Description=E8H
+Type=HTTP
+TrustAll=true
+Authentication=NoAuthentication
+WebIDEUsage=odata_abap,dev_abap,odata_gen,ui5_execute_abap,bsp_execute_abap,odata_xs
+Name=E8H
+WebIDEEnabled=true
+URL=https\://ldcie8h.wdf.sap.corp\:44300
+ProxyType=Internet
+sap-client=000
+WebIDESystem=E8H

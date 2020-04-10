@@ -1,3 +1,4 @@
+<%@page import="Model.PostModel"%>
 <%@page import="Model.DatabaseConnection"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
@@ -52,7 +53,7 @@
 							    "<div class='panel-heading'>" + 
 								    "<h4 class='panel-title'>" + 
 									    "<h4><a style='color: black' data-toggle='collapse' data-parent='#accordion' href='#collapse" + i + "' >" + postName + 
-									    "</a> (<span style='color: " + color + "'> SUBJECT ID : " + subjectId +"</span> ) </h4>" + 
+									    "</a> (<span style='color: " + color + "'> " + PostModel.getSubjectNamesArrayList().get(subjectId) +"</span> ) </h4>" + 
 								    "</h4>" + 
 								    "</div>" + 
 								    "<div id='collapse" + i + "' class='panel-collapse collapse in'>" + 

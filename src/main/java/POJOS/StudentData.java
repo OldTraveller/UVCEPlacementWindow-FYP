@@ -26,21 +26,32 @@ public class StudentData {
 		return studentUSN;
 	}
 	public void setStudentUSN(String studentUSN) {
-		this.studentUSN = studentUSN;
+		this.studentUSN = studentUSN.toUpperCase(); 
 	}
+	/* 
+	 * The student details goes into Enlisted Students Queue. 
+	 * If verified by ADMIN then termed Valid.
+	 * He can carry out transactions in the Database then. 
+	 */ 
 	public int getStudentIsValid() {
 		return studentIsValid;
+	}
+	public void setStudentPublicKey(String studentPublicKey) {
+		this.studentPublicKey = studentPublicKey;
+	}
+
+	public void setStudentPrivateKey(String studentPrivateKey) {
+		this.studentPrivateKey = studentPrivateKey;
 	}
 
 	public void setStudentIsValid(int studentIsValid) {
 		this.studentIsValid = studentIsValid;
 	}
-
 	public String getStudentName() {
 		return studentName;
 	}
 	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+		this.studentName = studentName.toUpperCase(); 
 	}
 	public String getStudentBranch() {
 		return studentBranch;
@@ -64,6 +75,6 @@ public class StudentData {
 		return studentEmail;
 	}
 	public void setStudentEmail(String studentEmail) {
-		this.studentEmail = studentEmail;
+		this.studentEmail = studentEmail.toLowerCase();
 	} 
 }

@@ -1,5 +1,10 @@
 package POJOS;
 
+/* CLASS to store the POSTS object in Database */ 
+/**
+ * @author I532620
+ *
+ */
 public class Post {
 	long postId =  System.currentTimeMillis(); 
 	String postName; 
@@ -7,6 +12,10 @@ public class Post {
 	String postLink; 
 	int postSubjectId; 
 	boolean postIsSpam; 
+	public void setPostId(long postId) {
+		this.postId = postId;
+	}
+
 	String studentUsn;
 	
 	public boolean isPostIsSpam() {
@@ -22,13 +31,13 @@ public class Post {
 		return postName;
 	}
 	public void setPostName(String postName) {
-		this.postName = postName;
+		this.postName = capitalize(postName);
 	}
 	public String getPostDesc() {
 		return postDesc;
 	}
 	public void setPostDesc(String postDesc) {
-		this.postDesc = postDesc;
+		this.postDesc = capitalize(postDesc); 
 	}
 	public String getPostLink() {
 		return postLink;
@@ -46,6 +55,13 @@ public class Post {
 		return studentUsn;
 	}
 	public void setStudentUsn(String studentUsn) {
-		this.studentUsn = studentUsn;
+		this.studentUsn = studentUsn.toUpperCase(); 
 	} 
+	
+	public static String capitalize(String str) {
+	    if(str == null || str.isEmpty()) {
+	        return str;
+	    }
+	    return str.substring(0, 1).toUpperCase() + str.substring(1);
+	}
 }
