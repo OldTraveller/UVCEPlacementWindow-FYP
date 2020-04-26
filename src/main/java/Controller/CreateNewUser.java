@@ -34,6 +34,7 @@ public class CreateNewUser extends HttpServlet {
 		String studentSemester = request.getParameter("student_semester");
 		String studentType = request.getParameter("student_type");
 		String studentCodeforcesHandle = request.getParameter("student_codeforces_handle"); 
+		String studentGithubHandle = request.getParameter("student_github_handle");
 		try {
 			StudentData studentData = new StudentData();
 			studentData.setStudentUSN(studentUSN);
@@ -43,6 +44,7 @@ public class CreateNewUser extends HttpServlet {
 			studentData.setStudentSemester(Integer.parseInt(studentSemester));
 			studentData.setStudentIsValid(1);
 			studentData.setStudentCodeforcesHandle(studentCodeforcesHandle);
+			studentData.setStudentGithubHandle(studentGithubHandle);
 			/*--------------------------------------------------------------------*/
 			/*
 			 * 1. Insert a normal record to the STUDENT_DATA table. 

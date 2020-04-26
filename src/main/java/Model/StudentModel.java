@@ -24,7 +24,7 @@ public class StudentModel {
 		boolean isInserted = false; 
 		/* Connection Establishment */
 		Connection connection = DatabaseConnection.getLocalConnection(); 
-		String sql = "INSERT INTO STUDENT_DATA VALUES (?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO STUDENT_DATA VALUES (?,?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = connection.prepareStatement(sql); 
 		try {
 			/* Setting all the parameters */ 
@@ -39,6 +39,7 @@ public class StudentModel {
 			/* Initially setting all the students to be INVALID - 0 */ 
 			ps.setInt(8, studentData.getStudentIsValid());
 			ps.setString(9, studentData.getStudentCodeforcesHandle());
+			ps.setString(10, studentData.getStudentGithubHandle());
 			isInserted = (ps.executeUpdate() > 0);
 		} catch (Exception e) {
 			System.out.println("There was a problem in INSERTING STUDENT RECORD."); 
@@ -120,6 +121,7 @@ public class StudentModel {
 			studentData.setStudentEmail(result.getString(7));
 			studentData.setStudentIsValid(result.getInt(8));
 			studentData.setStudentCodeforcesHandle(result.getString(9));
+			studentData.setStudentGithubHandle(result.getString(10));
 		}
 		scanner.close();
 		statement.close();

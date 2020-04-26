@@ -12,7 +12,7 @@
   <script src="./javascripts/helper.js" type="text/javascript"></script>
   <script data-ad-client="ca-pub-8188827845576666" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="totn_logo.ico"/>
-  <title>END-GAME Project</title>
+  <title>UVCE - PlacementWindow</title>
 </head>
 <body>
 <header data-block-type="headers" data-id="1" class="fp-active">

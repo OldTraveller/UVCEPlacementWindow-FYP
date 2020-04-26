@@ -17,15 +17,21 @@ public class StudentData {
 	String studentEmail;
 	int studentIsValid = 1;
 	String studentCodeforcesHandle = "#"; 
+	String studentGithubHandle = "#";
+	
 
+	public String getStudentGithubHandle() {
+		return studentGithubHandle;
+	}
+	public void setStudentGithubHandle(String studentGithubHandle) {
+		this.studentGithubHandle = studentGithubHandle;
+	}
 	public String getStudentCodeforcesHandle() {
 		return studentCodeforcesHandle;
 	}
-
 	public void setStudentCodeforcesHandle(String studentCodeforcesHandle) {
 		this.studentCodeforcesHandle = studentCodeforcesHandle;
 	}
-
 	public StudentData() throws NoSuchAlgorithmException {
 		this.studentPrivateKey = ImportantFunctions.getSHAString(String.valueOf(System.nanoTime()));
 		this.studentPublicKey = ImportantFunctions.getSHAString(String.valueOf(System.currentTimeMillis()));

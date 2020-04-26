@@ -161,13 +161,16 @@
       </select>
     </div>
   </div>
-      <div class="form-group">
-	    <label for="student_codeforces_handle">Codeforces Account (optional)</label>
-	    <input required type="text" name="student_codeforces_handle" value="#" class="form-control" aria-describedby="inst_student_codeforces_handle">
-	    <small id="inst_student_codeforces_handle" class="text-muted">
-	      	If you have a Codeforces Account. Enter the correct handle here. Otherwise leave it # symbol. 
-	    </small>
-  </div>
+	<div class="row">
+		      <div class="form-group col-md-6">
+	    		<label for="student_codeforces_handle">Codeforces Account (optional)</label>
+			    <input required type="text" name="student_codeforces_handle" value="#" class="form-control" aria-describedby="inst_student_codeforces_handle">
+		  </div>
+		  <div class="form-group col-md-6">
+			    <label for="student_codeforces_handle">Github Handle (optional)</label>
+			    <input required type="text" name="student_github_handle" value="#" class="form-control" aria-describedby="inst_student_codeforces_handle">
+		  </div>
+	</div>
   <button type="submit" class="btn btn-danger">SignUp User</button>
 </form>
 <hr>

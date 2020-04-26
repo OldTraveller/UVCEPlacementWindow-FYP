@@ -25,7 +25,9 @@
   <li class="nav-item">
     <a class="nav-link" data-toggle="pill" href="#menu1">Codeforces Profile</a>
   </li>
-  
+   <li class="nav-item">
+    <a class="nav-link" data-toggle="pill" href="#menu4">Github Profile</a>
+  </li>
  <% if (StudentModel.isAdmin()) { %>
    <li class="nav-item">
     <a class="nav-link" data-toggle="pill" href="#menu2">SPAM Queue Visualizer</a>
@@ -34,6 +36,7 @@
     <a class="nav-link" data-toggle="pill" href="#menu3">Generate New User</a>
   </li>
  <% } %>
+
 </ul>
 </div>
 <hr>
@@ -124,8 +127,19 @@
   		<h2 class="text-center" style='color: red'><strong>Sorry there is no Codeforces Handle associated with this account!</strong></h2>
   	<% } else { %>
   		<h4 class="text-center" style='color: blue'>Codeforces Handle: <strong><%= studentData.getStudentCodeforcesHandle() %></strong></h4>
-  		    	<hr>
   		    	<jsp:include page="./codeforces_page.jsp" />
+  	<% } %>
+  	<hr>
+  </div>
+  
+    <div id="menu4" class="container tab-pane">
+    <h3 class="text-center">Github Profile of <span style="color: purple"><strong><%= studentData.getStudentName() %></strong></span></h3>
+  	<hr>
+  	<% if (studentData.getStudentCodeforcesHandle().equals("#")) { %>
+  		<h2 class="text-center" style='color: red'><strong>Sorry there is no Github Handle associated with this account!</strong></h2>
+  	<% } else { %>
+  		<h4 class="text-center" style='color: blue'>Github Handle: <strong><%= studentData.getStudentGithubHandle() %></strong></h4>
+  		    	<jsp:include page="./github_page.jsp" />
   	<% } %>
   	<hr>
   </div>
@@ -164,6 +178,7 @@
     	  }
     	  return false; 
       }
+
       
       function sendToggleRequest(postId) {
     	  $.get("TogglePostSpamStatusServlet?POST_ID=" + postId, function(data, status){
