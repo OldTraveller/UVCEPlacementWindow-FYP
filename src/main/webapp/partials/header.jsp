@@ -18,7 +18,7 @@
 <header data-block-type="headers" data-id="1" class="fp-active">
   <div class="container">
     <nav class="navbar navbar-expand-md no-gutters">
-      <div class="col-3 text-left">
+      <div class="col-2 text-left">
         <a href="MainPageView">
             <h4 style="color: black;"><strong>UVCE Placement Window</strong></h4>
         </a>
@@ -28,7 +28,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-      <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-8 " id="navbarNav7">
+      <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-9 " id="navbarNav7">
         <ul class="navbar-nav justify-content-center">
           <li class="nav-item active">
             <a class="nav-link" href="MainPageView">Main-Window</a>
@@ -38,6 +38,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="ContributeView">Contribute</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ViewCodeforcesProblemCategoriser">Problem Suggester</a>
           </li>
            <li class="nav-item">
             <a class="nav-link" href="ContributorsView">Public-Keys</a>

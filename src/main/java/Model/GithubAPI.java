@@ -34,7 +34,6 @@ public class GithubAPI {
 			 while ((responseLine = br.readLine()) != null) {
 			       response.append(responseLine.trim());
 			 }
-			 System.out.println(response.toString());
 			 return response.toString();
 		}
 	}

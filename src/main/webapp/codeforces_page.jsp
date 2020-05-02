@@ -28,14 +28,18 @@
         	</div>
         </div>
         <hr>
-         <div class="container">
-        	<div class="row">
-        	     <div class="col-12 col-sm-6 col-lg-6 col-md-6">
-        	             <div id="ratings" class="hidden">
-        </div>
+        
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-12 col-lg-12 col-md-12">
+				<div id="ratings" class="hidden"></div>
+			</div>
+		</div>
+	</div>
 
-        	     </div>
-        	     <div class="col-12 col-sm-6 col-lg-6 col-md-6">
+	<div class="container">
+        	<div class="row">
+        	     <div class="col-12 col-sm-12 col-lg-12 col-md-12">
 			        <div id="levels" class="hidden">
 			        </div>
         	     </div>

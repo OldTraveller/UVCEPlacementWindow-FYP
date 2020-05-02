@@ -76,6 +76,12 @@
   	<description>This servlet creates a new user. </description>
   	<servlet-class>Controller.CreateNewUser</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ViewCodeforcesProblemCategoriser</servlet-name>
+  	<display-name>ViewCodeforcesProblemCategoriser</display-name>
+  	<description></description>
+  	<servlet-class>View.ViewCodeforcesProblemCategoriser</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>MainPageView</servlet-name>
   	<url-pattern>/MainPageView</url-pattern>
@@ -123,5 +129,9 @@
   <servlet-mapping>
   	<servlet-name>CreateNewUser</servlet-name>
   	<url-pattern>/CreateNewUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ViewCodeforcesProblemCategoriser</servlet-name>
+  	<url-pattern>/ViewCodeforcesProblemCategoriser</url-pattern>
   </servlet-mapping>
 </web-app>

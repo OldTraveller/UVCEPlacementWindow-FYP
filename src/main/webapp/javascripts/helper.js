@@ -26,6 +26,29 @@ const sendRequestToImportantTopics = () => {
 				}
 			});	
 		}
+	}
+
+const sendCodeforcesRequest = () => {
+	console.log("COMING HER sendRequestToCodeforcesPage()"); 
+	
+	var rating = document.getElementById("cf_rating").value; 
+	
+	var jsObject = {
+		rating: rating
+	};
+	console.log(jsObject); 
+		$.ajax({
+			url: "fetchproblemsbyrating.jsp",
+			type: 'POST',
+			data: jsObject, 
+			success: function(data) {
+				var placeToPopulate = document.getElementById('populateHere'); 
+				placeToPopulate.innerHTML = data; 
+			},
+			error: function() {
+				return "Soemthing went wrong!!!"; 
+			}
+		});	
 }
 
 const sendRequest = () => {
