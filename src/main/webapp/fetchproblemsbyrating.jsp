@@ -18,6 +18,8 @@
 		String id = request.getParameter("rating");
 		HashSet<CodeforcesProblem> problems = ProblemRecommender.getProblemsByRatingFromTree(Long.parseLong(id));
 		int i = 0; 
+		out.println("<div class='container'><h3 align='center'>TOTAL PROBLEMS - " + problems.size() + "</h3></div>"); 
+		out.println("<div class='row'>"); 
 		for (CodeforcesProblem problem : problems) {
 			i++;
 				String color = ""; 
@@ -33,9 +35,8 @@
 				
 				StringBuilder displayTags = new StringBuilder(); 
 				for (String tag_in : problem.getTags()) {
-					displayTags.append(tag_in + ","); 
+					displayTags.append(tag_in + ",");
 				}
-				displayTags.setLength(displayTags.length() - 1);
 				String html = "<div class='col-sm-12 col-md-3 col-lg-3'>" + 
 					    		"<div class='card'>" +
 			      					"<div class='card-body'>" +

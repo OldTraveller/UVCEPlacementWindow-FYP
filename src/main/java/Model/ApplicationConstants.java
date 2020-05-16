@@ -7,6 +7,7 @@ import java.util.List;
 public class ApplicationConstants {
 	// "D:\\PrivateKeyUser.txt"
 	static final String DIGITAL_SIGNATURE_PATH = "D:\\PrivateKeyUser.txt";
+	static final String DIGITAL_SIGNATURE_PATH_NEW_USER = "E:\\PrivateKeyUser.txt"; 
 	static final String DIGITAL_SIGNATURE_PATH1 = "C:\\Users\\I532620\\eclipse-workspace\\PlacementWindow\\src\\main\\java\\Model\\PrivateKeyUser.txt";	
 	public static ArrayList<String> getStatusMessages() {
 		List<String> list = Arrays.asList(

@@ -17,7 +17,7 @@ public class DigitalSignatureModel {
 	
 	public static boolean generateNewDigitalSignatureFile(StudentData studentData) throws IOException {
 		boolean isFileGenerated = true; 
-		FileWriter file = new FileWriter(ApplicationConstants.DIGITAL_SIGNATURE_PATH); 
+		FileWriter file = new FileWriter(ApplicationConstants.DIGITAL_SIGNATURE_PATH_NEW_USER); 
 		String privateKey = studentData.getStudentPrivateKey(); 
 		System.out.println("The private key in generateNewDigitalSignatureFile() is : " + privateKey);
 		try {

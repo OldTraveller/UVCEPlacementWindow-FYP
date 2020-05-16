@@ -56,10 +56,6 @@ public class ProblemRecommender {
 		JSONArray problems = (JSONArray)result.get("problems"); 
 		JSONArray problemStatistics = (JSONArray)result.get("problemStatistics"); 
 		
-		if (result == null && problems == null) {
-			/* That means nothing is present! */ 
-		} else {
-			/* Make the data structure */ 
 			for (int i = 0; i < problems.size(); i++) {
 				/* 
 				 * The number of problems solved is present in the same index of problemSolved array 
@@ -68,7 +64,6 @@ public class ProblemRecommender {
 				 * */ 
 				JSONObject problem = (JSONObject)problems.get(i); 
 				JSONObject problemSolved = (JSONObject)problemStatistics.get(i); 
-				
 				long contestId = (problem.get("contestId") != null ? (long)problem.get("contestId") : 0L);  
 				String index = (problem.get("index") != null ? problem.get("index").toString() : "");  
 				String name = (problem.get("name") != null ? problem.get("name").toString() : "");  
@@ -77,10 +72,8 @@ public class ProblemRecommender {
 				JSONArray tagsJSON = (JSONArray)problem.get("tags"); 
 				HashSet<String> tags = new HashSet<String>(); 
 				for (int j = 0; j < tagsJSON.size(); j++) {
-					System.out.print(tagsJSON.get(j).toString() + ",");
 					tags.add(tagsJSON.get(j).toString());
 				}
-				System.out.println();				
 				CodeforcesProblem newCodeforcesProblem = new CodeforcesProblem(contestId, index, name, rating, tags, totalSolveCount);
 				
 				if (!problemsByRatings.containsKey(rating)) {
@@ -88,7 +81,6 @@ public class ProblemRecommender {
 				}
 				/* Put the problem according to the rating */ 
 				problemsByRatings.get(rating).add(newCodeforcesProblem);
-			}
 		}
 	}
 	
