@@ -11,7 +11,6 @@ The overall project contains-
 - The feature which includes DIGITAL SIGNATURE authentication for the submission of POSTs. 
 - Integrated Codeforces API, for having the information regarding the progress in competitive coding for placements. 
 - Spam Detector (Naive Bayesian Classifier), through which the POSTs pass and categorise themselves into SPAM or HAM. Based on the status the POST will be displayed on the FrontEnd.
-- Problem Recommender from the Codeforces API (In process). 
-- Genetic Algorithm Code. (Yet to be decided)
+- Problem Recommender from the Codeforces API (Done!) 
 
 
