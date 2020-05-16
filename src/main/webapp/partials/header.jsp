@@ -43,7 +43,7 @@
             <a class="nav-link" href="ViewCodeforcesProblemCategoriser">Problem Suggester</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="ContributorsView">Public-Keys</a>
+            <a class="nav-link" href="ContributorsView">Contributors</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="UserWindow">Check Content</a>

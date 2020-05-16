@@ -50,7 +50,8 @@
 %>
     </section>
     <hr>
-    <% if (!DigitalSignatureModel.isDigitalSignaturePresent()) { %>
+    <% if (!DigitalSignatureModel.isDigitalSignaturePresent()) {
+    	%>
     <div class="hero-unit container totn-border w3-animate-right" align="center">
 	  <h1 style="color: red;">Digital Signature Error!</h1>
 	  <p style="color: orange;">There might not be a valid Digital Signature Device present in the PC.</p>

@@ -31,12 +31,12 @@ public class DigitalSignatureModel {
 		return isFileGenerated;
 	}
 	
-	public static boolean isDigitalSignaturePresent() throws ClassNotFoundException, URISyntaxException, SQLException, FileNotFoundException {
+	public static boolean isDigitalSignaturePresent() throws ClassNotFoundException, URISyntaxException, FileNotFoundException {
 		boolean isValid = true;
 		/* Defined like this - 
 		 * static final String DIGITAL_SIGNATURE_PATH = "D:\\PrivateKeyUser.txt";
 		 */
-		File file = new File(ApplicationConstants.DIGITAL_SIGNATURE_PATH);
+		File file = new File(ApplicationConstants.getDigitalSignaturePath());
 		
 		/* 
 		 * I will first check whether some file exists with this file URL.
@@ -44,6 +44,7 @@ public class DigitalSignatureModel {
 		 * looking for is not present itself. So isValid = false, should be returned. 
 		 * */ 
 		if (!file.exists()) {
+			System.out.println("File doesn't exists!");
 			isValid = false; 
 			return isValid; 
 		}
@@ -58,9 +59,13 @@ public class DigitalSignatureModel {
 		 * else: 
 		 * 		RESTRICT POSTING 
 		 */
-		boolean checkDigitalSignatureFileAndCompare = getCheckDigitalSignatureFileAndCompare(); 
-		if (!checkDigitalSignatureFileAndCompare) {
-			isValid = false; 
+		try {
+			boolean checkDigitalSignatureFileAndCompare = getCheckDigitalSignatureFileAndCompare(); 
+			if (!checkDigitalSignatureFileAndCompare) {
+				isValid = false; 
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 		
 		return isValid; 
@@ -70,7 +75,7 @@ public class DigitalSignatureModel {
 		boolean isDigitalSignatureValid = true; 
 		/* Get the private key from the File */ 
 		String privateKey = null; 
-		File filePath = new File(ApplicationConstants.DIGITAL_SIGNATURE_PATH); 
+		File filePath = new File(ApplicationConstants.getDigitalSignaturePath()); 
 		Scanner scanner = new Scanner(filePath); 
 		while (scanner.hasNextLine()) {
 			privateKey = scanner.nextLine();
@@ -95,7 +100,7 @@ public class DigitalSignatureModel {
 	
 	public static String getPrivateKeyFromFile() throws FileNotFoundException {
 		String privateKey = null; 
-		File filePath = new File(ApplicationConstants.DIGITAL_SIGNATURE_PATH); 
+		File filePath = new File(ApplicationConstants.getDigitalSignaturePath()); 
 		Scanner scanner = new Scanner(filePath); 
 		while (scanner.hasNextLine()) {
 			privateKey = scanner.nextLine();

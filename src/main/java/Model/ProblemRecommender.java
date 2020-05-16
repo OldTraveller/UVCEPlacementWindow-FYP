@@ -88,7 +88,7 @@ public class ProblemRecommender {
 		// Design Pattern. 
 		if (problemsByRatings == null) {
 			/* LOAD the PROBLEMS into the RAM */ 
-			System.out.println("This is hitting the server!"); 
+			System.out.println("Hitting the Codeforces Server"); 
 			loadProblemsInTreeMap(); 
 		}
 		return problemsByRatings.get(rating); 
@@ -98,10 +98,9 @@ public class ProblemRecommender {
 		HashSet<CodeforcesProblem> categoryProblemsForRating = new HashSet<CodeforcesProblem>();
 		if (problemsByRatings == null) {
 			/* LOAD the PROBLEMS into the RAM */ 
-			System.out.println("This is hitting the server!"); 
+			System.out.println("Hitting the Codeforces Server"); 
 			loadProblemsInTreeMap(); 
 		}
-		
 		HashSet<CodeforcesProblem> getByRating = getProblemsByRatingFromTree(rating); 
 		System.out.println("The size of getByRating is : " + getByRating.size()); 
 		if (getByRating != null) {

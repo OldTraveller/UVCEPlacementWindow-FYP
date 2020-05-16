@@ -100,7 +100,7 @@ public class StudentModel {
 
 	public static StudentData getDigitalSignaturePresentStudentData() throws FileNotFoundException, SQLException, ClassNotFoundException, URISyntaxException, NoSuchAlgorithmException {
 		String privateKey = null; 
-		File filePath = new File(ApplicationConstants.DIGITAL_SIGNATURE_PATH); 
+		File filePath = new File(ApplicationConstants.getDigitalSignaturePath()); 
 		Scanner scanner = new Scanner(filePath); 
 		while (scanner.hasNextLine()) {
 			privateKey = scanner.nextLine();
