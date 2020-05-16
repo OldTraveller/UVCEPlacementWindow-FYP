@@ -12,24 +12,28 @@
             <div class="hero-body" >
                 <div class="container" align="center">
                     <h1 ><strong>
-                        <span style="color: BLACK;">List Of Public Keys of Participants ...</span>
+                        <span style="color: BLACK;">List of PEOPLE</span>
                     </strong></h1>
                     <h3 class="subtitle"> <span style="color: BLACK;">
-                    	List of people who can make the contribution as of now. If interested for a key, generate it from the menu. 
+                    	List of people who can make the contribution as of now. 
+                    	If interested to use the UVCE Placement Window Tool personalized version, contact us. 
                     	</span>
                     </h3>
                 </div>
             </div>
         </section>
     </section>
-    <hr>
-
     <section class="container w3-animate-zoom" align="center">
-  			<h3><strong>LIST OF PEOPLE AND THEIR PUBLIC KEYS<strong></h3>
-  			<hr>
 <%!
-	public static String getDataElement(String key, String value) {
-		return "<tr><td class='is-half'><strong>" + key + "</strong></td><td class='is-half' style='color: blue;'>" + value + "</td></tr>";
+	public static String getDataElement(String name, String branch, String codeforces, String gitHub) {
+		String gitHubUrl = "https://github.com/" + gitHub; 
+		String codeForcesUrl = "https://codeforces.com/profile/" + codeforces; 
+		return "<tr>" + 
+				"<td class='is-half'><strong>" + name + "</strong></td>" + 
+				"<td class='is-half' style='color: blue;'>" + branch + "</td>" + 
+						"<td class='is-half' style='color: purple;'><a target='_blank' href='" + codeForcesUrl + "'>" + codeforces + "</a></td>" + 
+								"<td class='is-half' style='color: cyan;'><a target='_blank' href='" + gitHubUrl + "'>" + gitHub + "</a></td>" + 
+				"</tr>";
 	}
 %>
 <%
@@ -45,13 +49,21 @@
 		int i = 0; 
 		out.println("<hr>");
 		out.println("<table class='table table-bordered table-hover'>" + 
-				"<thead><tr><th style='background-color: BLACK; color: white'>NAME</th><th style='color : white; background-color: BLACK;'>PUBLIC KEY</th></tr></thead>");
+				"<thead>" + 
+				"<tr>" + 
+				"<th style='background-color: BLACK; color: white'>NAME</th>" + 
+				"<th style='color : white; background-color: BLACK;'>BRANCH</th>" + 
+								"<th style='color : white; background-color: BLACK;'>CODEFORCES</th>" + 
+										"<th style='color : white; background-color: BLACK;'>GITHUB</th>" + 
+				"</tr></thead>");
 		
 		while(resultSet.next()){
 				i++; 
-				String publicKey = resultSet.getString("STUDENT_PUBLIC_KEY"); 
+				String branch = resultSet.getString("STUDENT_BRANCH"); 
 				String name = resultSet.getString("STUDENT_NAME"); 
-				out.println(getDataElement(name, publicKey)); 
+				String codeforces = resultSet.getString("STUDENT_CODEFORCES_HANDLE"); 
+				String gitHub = resultSet.getString("STUDENT_GITHUB_HANDLE"); 
+				out.println(getDataElement(name, branch, codeforces, gitHub)); 
 		}
 		out.println("</table>");
 		if (i == 0) {
